@@ -1,0 +1,104 @@
+Manual part program for Taper turning and Thread Cutting on CNC lathe.
+
+Aim: To develop a part program for Taper turning and Thread cutting operation on CNC lathe machine
+
+Apparatus: Desktop computer with required accessories and required specifications, CNC Train software. CNC Lathe Machine, work piece		
+
+Procedure: 
+
+1. The Manual part program for Taper turning is:
+
+O 1005
+[ BILLET X 22 Z100
+G 21 G 98
+G 28 U0 W0
+M06 T0303
+M03 S1200
+G00 X 22 Z1
+G90 X 22 Z-54 F35
+X 21
+X 20
+X 19
+X 18.8 
+X 18 
+X 17 Z-6 
+X 16 
+:
+X 9 
+G00 X 18 Z – 6 
+G90 X18 Z – 21 R0 F30 
+X 18 R- 05
+X 18 R – 1
+G00 X18 Z – 48
+G90 X18 Z – 54 F30
+X17
+:
+X9
+G28 U0W0
+M05
+M30
+
+Taper Turning G 90R:
+
+X 18 R – 4.5
+G01 X 18 Z- 33
+G90 X 18 Z – 48 R0 F30
+X 17 R0.5
+X 16 R1
+X 15 R 1.5
+X 14 R2
+X 13 R2.5
+X 12 R3
+X 11 R3.5
+X 10 R4
+X9 R4.5
+
+2. The Manual part program for Thread cutting is:
+
+O 3210
+[ BILLET X 22 Z 100
+G 21 G 98
+G 28 U0 W0
+M06 T0303
+M03 S1200
+Z00 X 22 Z1
+G90 X 22 Z–65 F 25
+X 21
+X 20
+:
+X16
+X 15 Z – 30
+:
+X 12
+M 06 T0707
+M 03 S 800
+G00 X 13 Z – 30
+G81 X12 Z – 30 F25
+X 11.8
+X 11.6
+:
+X 9.2
+X 9
+G28 U0 W0
+M06 T0101
+G00 X14 Z2
+G 92 X12 Z – 27 F2
+X 11.8
+X 11.6
+:
+X 10
+X
+G 28 U0 W0
+M05
+M30
+
+The above two part programs are entered in the CNC Train software and the required tool and compensation details are entered and executed. Later the same programmed is loaded to the Machine control of the CNC Lathe machine and the work piece is machined.
+
+Precautions: 
+
+1. Appropriate tool must be selected
+2. Required compensation details must be entered exactly for correct execution of the program
+
+Result:
+
+The Programs are written and executed on CNC Train software and CNC Lathe Machine.
