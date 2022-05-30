@@ -1,0 +1,112 @@
+im: To develop a part program for contouring and circular pocketing operation on CNC Milling machine
+
+Apparatus: Desktop computer with required accessories and required specifications, CNC Train software, CNC Milling Machine, Rectangular Work piece.	
+
+Procedure: 
+
+1. The Manual part program for contouring operation is:
+
+[ BILLET X 100 Y100 Z10
+
+[TOOL DEF T01 D6
+
+[EDGE MOVE X-50 Y- 50
+
+G 21 G 94 G 91 G28 ZO
+
+G28 XO YO
+
+G 90
+
+M06 T01
+
+M03
+
+$1000
+
+I POSITIONING POINT
+
+-2
+
+(P1
+
+GOO X-30 YO Z5
+
+G01
+
+Z-1 F 50
+
+G02 X 30 YO R30
+
+G02
+
+X 30 Y 0 R 30
+
+G01 Z-2 F 50 G02 X 30 Y 0 R 30
+
+G02
+
+X-30 YOR 30
+
+G01 Z-3 F 50
+
+G02 X 30 YOR 30
+
+G02 X-30 Y OR 30
+
+GOO Z 5
+
+G91 G 28 ZO
+
+G28 XO YO M 05
+
+M 30
+2. The Manual part program for circular pockeing operation is:
+
+[BILLET X 100 Y100 Z10 [TOOL DEF T01 D6
+
+87
+
+[EDGE MOVE XOYO
+
+G 21 G 94
+
+G 91 G28 ZO
+
+G28 XO YO
+
+G 90
+
+M06 T01
+
+M03 S1500
+
+GOO XO YO Z 5
+
+! ROUGH
+
+100
+
+G 170 R0.5 PO Q1 XO YO Z-2 10.1 J0.1 K 24 G 171 P 75 S 1500 R 60 F50 B 1800 J 60
+
+! FINISH
+
+G 170 R0.5 P1 Q1 XO YO Z-2 10 JO K 24 G 171 P 75 S 1500 R 60 F 50 B 1800 J 60
+
+GOO Z 5
+
+G91 G 28 ZO G 28 XO YO
+
+M 05
+
+M 30
+The above two part programs are entered in the CNC Train software and the required tool and compensation details are entered and executed. Later the same programmed is loaded to the Machine control of the CNC Milling machine and the work piece is machined.
+
+Precautions: 
+
+1. Appropriate tool must be selected
+2. Required compensation details must be entered exactly for correct execution of the program
+
+Result:
+
+The Programs are written and executed on CNC Train software and CNC Milling Machine. 	
