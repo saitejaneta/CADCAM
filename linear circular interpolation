@@ -8,3 +8,60 @@ Apparatus: Desktop computer with required accessories and required specification
 Procedure: 
 
 1. The Manual part program for Linear Interpolation is:
+[ BILLET X 100 Y100 Z10 [TOOL DEF TO1 D6
+
+[EDGE MOVE XO YO
+
+G 21 G 94
+
+G 91 G28 ZO
+
+G28 XO YO
+
+G 90
+
+M06 T01
+
+M03
+
+S1500
+
+G00
+
+X 10 Y10 Z5
+
+Z-1 F 50
+
+G01
+
+X 10 Y 90
+
+X 90 Y 90
+
+G01
+
+G01
+
+G01
+
+X 90 Y 10
+
+G01
+
+X 10 Y 10
+
+GOO
+
+Z5
+
+G91
+
+G 28 ZO
+
+G28
+
+X0 Y0
+
+M 05
+
+M 30
