@@ -65,3 +65,68 @@ X0 Y0
 M 05
 
 M 30
+circular interpolation
+[BILLET X 100 Y100 Z10
+
+[TOOL DEF T01 D6 [EDGE MOVE XO YO
+
+G 21 G 94
+
+G 91 G28 ZO
+
+G28 XO YO
+
+Rin
+
+XO YO
+
+OG 90
+
+MO6 TO1
+
+M03 $1000
+
+10 10.
+
+G00
+
+X 20 Y10 Z5
+
+G01 Z-1 F 50
+
+G03 X 10 Y20 R10
+
+G01 X 10 Y 80
+
+G02 X 20 Y90 R 10
+
+G01 X 80 Y 90
+
+G01 X 80 Y 80
+
+G01 X 90 Y 80
+
+G01 X 90 Y 20
+
+G01 X 80 Y 10
+
+G01 X 20 Y 10
+
+GOO Z 5
+
+G91 G 28 ZO
+
+G28 XO YO M 05
+
+M 30
+The above two part programs are entered in the CNC Train software and the required tool and compensation details are entered and executed. Later the same programmed is loaded to the Machine control of the CNC Milling machine and the work piece is machined.
+
+Precautions: 
+
+1. Appropriate tool must be selected
+2. Required compensation details must be entered exactly for correct execution of the program
+
+Result:
+
+The Programs are written and executed on CNC Train software and CNC Milling Machine. 	
+
